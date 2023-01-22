@@ -5844,6 +5844,10 @@ b,sup,sub,u,del{
 	color: white;
 	content: '■';
 }
+.logo { 
+	width:250px;
+	height:60px;
+ }
 
 /* .animation { */
   /* /* animation properties */ */
