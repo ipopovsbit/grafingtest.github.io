@@ -38,6 +38,16 @@
     </div>
     <!-- Preloader Start -->
 <header>
+	<div class="cookie-overlay p-4 d-none">
+	  <div class="d-flex">
+		<div class="mr-3">
+		  By clicking the "Accept" button below, you agree to our <%= link_to
+		  'Cookie Policy', cookies_url, target: '_blank' %>.
+		</div>
+		<img src="/close.png" class="close-cookies" />
+	  </div>
+	  <button class="btn btn-primary mt-3 accept-cookies">Accept</button>
+	</div>
     <!--? Header Start -->
     <div class="header-area">
         <div class="main-header header-sticky">
@@ -46,8 +56,8 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-1">
                         <div class="logo">
-                             <a href="about.html"><img src="assets/img/logo/logo-ambulanter-pflegedienst-grafing.svg" alt="AmbulanterPflegeDienstGrafing"></a>
-							 <!-- <a href="about.html"><img src="assets/img/logo/logo-04-wide.png" alt=""></a> -->
+							<a href="index.html"><img src="assets/img/logo/logo-ambulanter-pflegedienst-grafing.svg" alt="AmbulanterPflegeDienstGrafing">
+                            <!-- <a href="about.html"><img src="assets/img/logo/logo-04-wide" alt=""></a> -->
                         </div>
                     </div>
                     <div class="col-xl-10 col-lg-10 col-md-10">
@@ -57,7 +67,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <!-- <li><a href="index.html">Startseite</a></li> -->
-                                        <li><a href="about.html">Über uns</a></li>
+                                        <li><a href="index.html">Über uns</a></li>
 										   <li><a href="">Leistungen</a>
                                             <ul class="submenu">
                                                 <li><a href="basic_care.html">Grundpflege</a></li>
@@ -88,7 +98,7 @@
     </div>
     <!-- Header End -->
 </header>
-<main>
+	<main>
     <!--? Hero Start -->
     <div class="slider-area2">
         <div class="slider-height2 d-flex align-items-center">
@@ -113,7 +123,7 @@
                         <!-- Section Tittle -->
                         <div class="section-tittle section-tittle2 mb-35">
                             <span>Über unsere Firma</span>
-                            <h2>Herzlich willkommen willkommen in unserem Pflegedienst</h2>
+                            <h2>Herzlich willkommen in unserem Pflegedienst</h2>
                         </div>
                         <p>Unser Team besteht aus einem Arzt, examinierten Pflegekräften und Pflegehelfern  
 						Wir weisen jahrelange medizinische und pflegerische Erfahrung vor und haben darüber hinaus umfassende Fachkenntnisse im Bereich Gerontopsychiatrie und Demenz  
@@ -317,6 +327,23 @@
     <div id="back-top" >
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
+	<script>
+	$(document).on("ready", function () {
+  if (document.cookie.indexOf("accepted_cookies=") < 0) {
+    $(".cookie-overlay").removeClass("d-none").addClass("d-block");
+  }
+
+  $(".accept-cookies").on("click", function () {
+    document.cookie = "accepted_cookies=yes;";
+    $(".cookie-overlay").removeClass("d-block").addClass("d-none");
+  });
+
+  // expand depending on your needs
+  $(".close-cookies").on("click", function () {
+    $(".cookie-overlay").removeClass("d-block").addClass("d-none");
+  });
+})
+	</script>
 
     <!-- JS here -->
 
