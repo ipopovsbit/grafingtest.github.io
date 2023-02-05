@@ -2545,7 +2545,7 @@ hr{
     background-image:-moz-linear-gradient(0deg, #24c0f1 0%, #4c9afe 100%);
     background-image:-webkit-linear-gradient(0deg, #24c0f1 0%, #4c9afe 100%);
     background-image:-ms-linear-gradient(0deg, #24c0f1 0%, #4c9afe 100%);
-    padding:26px 103px 104px 111px
+    padding:1px 103px 104px 111px
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px){
     .department_area .dept_main_info .dept_info{
@@ -2908,7 +2908,7 @@ hr{
 }
 .all-starups-area .starups-img{
     width:50%;
-    background-image:url(../img/gallery/startup.png);
+    background-image:url(../img/gallery/startup.jpg);
     background-size:100%;
     background-size:cover;
     background-repeat:no-repeat;
