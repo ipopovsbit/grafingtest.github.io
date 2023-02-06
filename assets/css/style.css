@@ -5885,6 +5885,11 @@ b,sup,sub,u,del{
   }
 }
 
+.image-home-care {
+	width:540px;
+	height:410px;
+}
+
 /* .animation { */
   /* /* animation properties */ */
   /* animation-name: my-animation; */
