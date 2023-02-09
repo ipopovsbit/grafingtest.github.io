@@ -24,7 +24,13 @@
 	<link rel="stylesheet" href="assets/css/nice-select.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body> 
+
+  <div class="cookie-banner">
+		<p>Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Wenn Sie auf "Akzeptieren" klicken, stimmen Sie unserer Verwendung von Cookies zu.</p>
+		<button type="button" class="btn btn-success">Accept</button>
+		<button type="button" class="btn btn-danger">Decline</button>
+  </div>
     <!-- ? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -39,8 +45,9 @@
     <!-- Preloader Start -->
 <header>
     <!--? Header Start -->
+	<div id="mainContent">
     <div class="header-area">
-        <div class="main-header header-sticky">
+        <div class="main-header header-sticky" >
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <!-- Logo -->
@@ -84,23 +91,28 @@
             </div>
         </div>
     </div>
+	</div>
+	
     <!-- Header End -->
 </header>
 	<main>
     <!--? Hero Start -->
-    <div class="slider-area2">
-        <div class="slider-height2 d-flex align-items-center">
-            <div class="container">
-                <div class="row">
-                <div class="col-xl-12">
-                    <div class="hero-cap hero-cap2 text-center">
-                        <h2>Über uns</h2>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="headTitleAboutUs">
+		<div class="slider-area2">
+			<div class="slider-height2 d-flex align-items-center">
+				<div class="container">
+					<div class="row">
+					<div class="col-xl-12">
+						<div class="hero-cap hero-cap2 text-center">
+							<h2>Über uns</h2>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div>
     <!-- Hero End -->
     <!--? About Start-->
     <div class="about-area section-padding2">
@@ -220,7 +232,7 @@
 			    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="" alt="">
+                            <img src="assets/img/gallery/pflegedienst-team3.jpg" alt="">
                         </div>
                         <div class="team-caption">
                             <h3><a href="#">𝒜𝓁𝑒𝓀𝓈𝒶𝓃𝒹𝒶𝓇 ℳ𝒾𝓁𝓊𝓉𝒾𝓃𝑜𝓋𝒾𝒸</a></h3>
@@ -304,6 +316,42 @@
         <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
     </div>
     <!-- JS here -->
+	<script>
+	
+	   window.onload = function() {
+		  // Check if the cookie exists
+		 <!-- document.getElementById('mainContent').style.display='none'; -->
+	     <!-- document.getElementById('headTitleAboutUs').style.display='none'; -->
+		 
+		};
+		// get the buttons
+		var acceptBtn = document.querySelector('.btn-success');
+		var declineBtn = document.querySelector('.btn-danger');
+		var cookieBanner = document.querySelector('.cookie-banner');
+
+		// set the cookie when the user clicks on "Accept"
+		acceptBtn.addEventListener('click', function() {
+		document.cookie = "cookieAccepted=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+		cookieBanner.style.display = 'none';
+			document.getElementById('mainContent').style.display='block';
+			document.getElementById('headTitleAboutUs').style.display='block';
+		});
+
+		// remove the cookie when the user clicks on "Decline"
+		declineBtn.addEventListener('click', function() {
+			document.cookie = "cookieAccepted=false; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+			<!-- document.getElementById('mainContent').style.display='block'; -->
+		    <!-- document.getElementById('headTitleAboutUs').style.display='block'; -->
+		});
+
+		// check if the cookie has been set and hide the banner accordingly
+		if (document.cookie.indexOf("cookieAccepted=true") >= 0) {
+		    cookieBanner.style.display = 'none';
+			<!-- document.getElementById('mainContent').style.display='none';	 -->
+		    <!-- document.getElementById('headTitleAboutUs').style.display='none';		 -->
+		}
+
+	</script>
 
     <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
     <!-- Jquery, Popper, Bootstrap -->
