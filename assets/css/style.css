@@ -5908,6 +5908,11 @@ b,sup,sub,u,del{
 .emailSpan{
 	color:#237BE7;
 }
+.joboffers {
+	width: 450px;
+	height: 550px;
+	margin: 29px;
+}
 
 
 
